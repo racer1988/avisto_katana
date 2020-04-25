@@ -1,11 +1,9 @@
 import express from "express";
 import compression from "compression";  // compresses requests
-import session from "express-session";
 import bodyParser from "body-parser";
 import lusca from "lusca";
 import flash from "express-flash";
 import path from "path";
-import { SESSION_SECRET } from "./util/secrets";
 
 import * as gameService from "./services/gameService";
 import * as initGameService from "./services/initGameService";
@@ -20,11 +18,6 @@ app.set("port", process.env.PORT || 3000);
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({
-    resave: true,
-    saveUninitialized: true,
-    secret: SESSION_SECRET,
-}));
 app.use(flash());
 app.use(lusca.xframe("SAMEORIGIN"));
 app.use(lusca.xssProtection(true));

@@ -7,7 +7,7 @@ import store from '@/store'
 
 Vue.use(VueRouter)
 
-const checkLogin : NavigationGuard = function(_to, _from, next) {
+const checkLogin: NavigationGuard = function(_to, _from, next) {
   console.log("user:" + store.getters.username)
   if (!store.getters.username) {
     next({ name: 'login' })
