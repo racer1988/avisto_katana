@@ -7,37 +7,36 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
+import axios from "axios";
 
-import axios from 'axios';
-
-export default {
+export default Vue.extend({
   data() {
     return {
       game: {
         players: []
       },
       interval: null
-    }
+    };
   },
   computed: {
     isAdmin() {
-      return this.game.players.find(p => p.id.toLowerCase() == "simone")
+      return this.game.players.find(p => p.id.toLowerCase() == "simone");
     }
   },
   mounted() {
-    this.interval = setInterval(this.update, 1000)
+    this.interval = setInterval(this.update, 1000);
   },
   destroyed() {
     clearInterval(this.interval);
   },
   methods: {
     async update() {
-      this.updateGame(await axios.get('/api/game'))
-
+      this.updateGame(await axios.get("/api/game"));
     },
     newGame() {
-      this.updateGame(axios.post('/api/admin/newGame'))
+      this.updateGame(axios.post("/api/admin/newGame"));
     },
     updateGame(res) {
       Object.assign(this.game, res.data ? res.data : {});
@@ -46,7 +45,7 @@ export default {
       }
     }
   }
-}
+});
 </script>
 
 <style>

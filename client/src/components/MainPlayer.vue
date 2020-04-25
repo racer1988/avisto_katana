@@ -63,12 +63,13 @@
   </div>-->
 </template>
 
-<script>
-import PlayerMixin from "./PlayerMixin"
+<script lang="ts">
+import PlayerMixin from "./PlayerMixin";
+import Vue from "vue";
 
-export default {
+export default Vue.extend({
   mixins: [PlayerMixin]
-};
+});
 </script>
 
 <style>

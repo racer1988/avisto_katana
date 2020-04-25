@@ -9,12 +9,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import axios from "axios";
+import Vue from "vue";
+import { Game } from "@/../../../server/src/entities/game";
 
-export default {
+export default Vue.extend({
   props: {
-    game: { type: Object, required: true }
+    game: { type: Game, required: true }
   },
   computed: {
     lastDiscardedCard() {
@@ -40,7 +42,7 @@ export default {
       axios.put(`api/players/${this.$store.getters.username}/draw`);
     }
   }
-};
+});
 </script>
 
 <style>
