@@ -12,7 +12,7 @@
 <script lang="ts">
 import axios from "axios";
 import Vue from "vue";
-import { Game } from "@/../../../server/src/entities/game";
+import { Game } from "@/../../shared/entities/game";
 
 export default Vue.extend({
   props: {

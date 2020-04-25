@@ -7,7 +7,7 @@ import path from "path";
 
 import * as gameService from "./services/gameService";
 import * as initGameService from "./services/initGameService";
-import { game } from "./entities/game";
+import { game } from "../../shared/entities/game";
 
 // Create Express server
 const app = express();

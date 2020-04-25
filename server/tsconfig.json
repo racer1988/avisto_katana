@@ -17,6 +17,8 @@
         }
     },
     "include": [
-        "src/**/*"
+        "src/**/*",
+        "../shared/entities",
+        "../shared/utils/utils.ts"
     ]
 }

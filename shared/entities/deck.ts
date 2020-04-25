@@ -1,4 +1,4 @@
-import { getRandomInt } from "../services/utils";
+import { getRandomInt } from "../utils/utils";
 import { Card, GameCard, CharacterCard } from  "./card";
 export class Deck {
   cards: Array<Card>

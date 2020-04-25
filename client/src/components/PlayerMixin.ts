@@ -1,6 +1,6 @@
-import Vue from 'vue'
+import Vue from "vue";
 import axios from "axios";
-import { GameCard } from '@/../../server/src/entities/card'
+import { GameCard } from "@/../../shared/entities/card";
 
 export default Vue.extend({
   props: {
@@ -31,7 +31,7 @@ export default Vue.extend({
       return this.player.isCurrentPlayer;
     },
     isShogun(): boolean {
-      return this.player.role.cardName.toLowerCase() == "shogun"
+      return this.player.role.cardName.toLowerCase() == "shogun";
     },
     isOwnerPlayer(): boolean {
       return this.player.isOwnerPlayer;
